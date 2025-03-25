@@ -5,8 +5,7 @@ FROM openjdk:22-jdk-slim
 WORKDIR /app
 
 # Sao chép toàn bộ project vào container
-COPY . .
-
+COPY build/libs/ktor-sample-all.jar app.jar
 # Build project trong container (nếu chưa có JAR)
 #RUN ./gradlew shadowJar || ./gradlew build
 
