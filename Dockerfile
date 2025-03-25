@@ -5,7 +5,6 @@ FROM openjdk:22-jdk-slim
 WORKDIR /app
 
 # Sao chép toàn bộ project vào container
-COPY build/libs/*.jar app.jar
 # Build project trong container (nếu chưa có JAR)
 
 # Định nghĩa đường dẫn JAR đúng
