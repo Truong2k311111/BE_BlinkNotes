@@ -10,7 +10,7 @@ COPY build/libs/ktor-sample-all.jar app.jar
 #RUN ./gradlew shadowJar || ./gradlew build
 
 # Định nghĩa đường dẫn JAR đúng
-CMD ["java", "-jar", "build/libs/ktor-sample-all.jar"]
+CMD ["java", "-jar", "app.jar"]
 
 # Expose cổng 8080
 EXPOSE 8080
