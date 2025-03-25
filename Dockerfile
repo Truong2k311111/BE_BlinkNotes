@@ -5,7 +5,7 @@ FROM openjdk:22
 WORKDIR /app
 
 # Sao chép file JAR từ thư mục build vào container
-COPY build/libs/*.jar app.jar
+COPY build/libs/ktor-sample-all.jar app.jar
 
 # Expose cổng 8080
 EXPOSE 8080
