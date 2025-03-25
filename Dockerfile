@@ -1,14 +1,11 @@
-# Sử dụng OpenJDK 17 (ổn định hơn
+
 FROM openjdk:22-jdk-slim
 
-# Đặt thư mục làm việc trong container
 WORKDIR /app
 
-# Sao chép toàn bộ project vào container
-# Build project trong container (nếu chưa có JAR)
+# Copy file JAR từ stage 1 sang container
+COPY ./build/libs/ktor-sample-all.jar app.jar
 
-# Định nghĩa đường dẫn JAR đúng
-CMD ["java", "-jar", "app.jar"]
-
-# Expose cổng 8080
 EXPOSE 8080
+
+CMD ["java", "-jar", "app.jar"]
