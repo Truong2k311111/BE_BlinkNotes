@@ -1,5 +1,5 @@
 # Sử dụng JDK 17 để chạy ứng dụng Ktor
-FROM openjdk:22
+FROM openjdk:17
 
 # Đặt thư mục làm việc trong container
 WORKDIR /app
