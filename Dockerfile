@@ -1,11 +1,14 @@
-
+# Sử dụng JDK 17 để chạy ứng dụng Ktor
 FROM openjdk:22-jdk-slim
 
+# Đặt thư mục làm việc trong container
 WORKDIR /app
 
-# Copy file JAR từ stage 1 sang container
-COPY --from=build /app/build/libs/ktor-sample-all.jar app.jar
+# Sao chép file JAR từ thư mục build vào container
+COPY build/libs/*.jar app.jar
 
+# Expose cổng 8080
 EXPOSE 8080
 
-CMD ["java", "-jar", "/app/app.jar"]
+# Chạy ứng dụng Ktor
+CMD ["java", "-jar", "app.jar"]
