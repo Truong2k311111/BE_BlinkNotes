@@ -1,14 +1,17 @@
-# Sử dụng JDK 17 để chạy ứng dụng Ktor
+# Sử dụng OpenJDK 17 (ổn định hơn)
 FROM openjdk:17
 
 # Đặt thư mục làm việc trong container
 WORKDIR /app
 
-# Sao chép file JAR từ thư mục build vào container
-COPY build/libs/ktor-sample-all.jar app.jar
+# Sao chép toàn bộ project vào container
+COPY . .
+
+# Build project trong container (nếu chưa có JAR)
+RUN ./gradlew shadowJar || ./gradlew build
+
+# Định nghĩa đường dẫn JAR đúng
+CMD ["java", "-jar", "build/libs/ktor-sample-all.jar"]
 
 # Expose cổng 8080
 EXPOSE 8080
-
-# Chạy ứng dụng Ktor
-CMD ["java", "-jar", "app.jar"]
