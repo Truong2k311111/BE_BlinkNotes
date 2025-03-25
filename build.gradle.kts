@@ -28,4 +28,8 @@ dependencies {
     implementation(libs.ktor.server.config.yaml)
     testImplementation(libs.ktor.server.test.host)
     testImplementation(libs.kotlin.test.junit)
+    implementation("org.litote.kmongo:kmongo:4.10.0") // Thư viện chính
+    implementation("org.litote.kmongo:kmongo-coroutine:4.10.0") // Hỗ trợ coroutine
+    implementation("org.mongodb:mongodb-driver-kotlin-coroutine:5.3.0")
+
 }
